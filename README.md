@@ -1,27 +1,36 @@
-# 📊 Company Performance Analysis Project
+# Company Performance Data Analysis 📊
 
-## 📝 Project Overview
-This project was developed to clean, merge, and analyze employee data. The primary goal was to handle messy datasets, identify top-performing employees, and visualize departmental salary trends to provide actionable business insights.
+This project focuses on cleaning, merging, and analyzing employee performance data using Python and Pandas.
 
-## 🛠️ Tools Used
-* **Language:** Python
-* **Library:** Pandas (Data Manipulation)
-* **Library:** Matplotlib (Data Visualization)
-* **Environment:** Jupyter Notebook / VS Code
+## 🛠️ Tools & Libraries Used
+- **Language:** Python
+- **Libraries:** Pandas (Data Manipulation), Matplotlib (Visualization)
+- **Environment:** Pydroid 3 / Jupyter Notebook
 
-## 📁 Files in this Repository
-* **Analysis.ipynb:** Complete Python code for data cleaning and analysis.
-* **Company_Performance_File1 & 2:** Raw data files containing employee info and performance metrics.
-* **Final_Company_Report.xlsx:** The final processed report (contains 'Full Report' and 'Top 5 Performers' in separate sheets).
-* **Company_Performance_Chart.png:** A visualization showing the average salary distribution by department.
+## 📋 Project Overview
+The goal was to integrate two separate datasets containing employee details and their performance scores/salaries. I performed extensive data cleaning to ensure the accuracy of the final insights.
 
-## 📊 Key Insights
-1. **Data Cleaning:** Successfully handled missing values, removed duplicates, and standardized Employee IDs.
-2. **Performance Tracking:** Identified the top 5 employees based on performance scores for recognition.
-3. **Salary Analysis:** Visualized salary distributions, helping to identify pay trends across different departments.
+## 🚀 Step-by-Step Process
 
-## 📈 Visual Representation
-![Average Salary Chart](Company_Performance_Chart.png)
+### 1. Data Cleaning
+- **Employee IDs:** Standardized IDs by removing 'EMP' prefixes and stripping whitespace.
+- **Name Cleaning:** Used Regex to remove numeric suffixes from names (e.g., 'Aisha1' -> 'Aisha').
+- **Handling Missing Values:** - Missing Departments were filled with 'Unknown'.
+  - Missing Salaries were imputed using the mean salary.
+  - Performance scores were converted to numeric, treating 'Excellent' as 5.
+
+### 2. Data Merging
+- Performed an **Outer Join** on two datasets based on `Employee_ID` to ensure no employee record was lost.
+
+### 3. Sorting & Final Export
+- Sorted the combined data by `Employee_ID` and exported it to a multi-sheet Excel workbook.
+
+## 💡 Key Insights
+- **Top 5 Performers:** Identified the highest-scoring employees for rewards and recognition.
+- **Departmental Salary Trend:** Generated a horizontal bar chart to compare average salaries across different departments.
+
+## 📊 Visualization
+![Department Salary Chart](Company_Performance_Chart.png)
 
 ---
-**Developed by:** Inamul Hasan
+*Created by  Inamul Hasan
